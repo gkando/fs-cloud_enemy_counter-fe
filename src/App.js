@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import styles from "./App.css";
-import logo from "./codehammer-logo-sm.png";
+import logo from "./img/codehammer-logo-sm.png";
 
 const Counter = ({ completed }) => {
   return <div className={styles.counter}>{completed}</div>;

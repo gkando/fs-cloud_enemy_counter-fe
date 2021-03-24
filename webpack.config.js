@@ -1,5 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "./src/index.js"),
@@ -27,6 +30,9 @@ module.exports = {
         test: /\.(jpg|png)$/,
         use: {
           loader: "url-loader",
+          options: {
+            name: "img/[hash]-[name].[ext]",
+          },
         },
       },
     ],
@@ -38,7 +44,17 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     filename: "bundle.js",
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: "src/img", to: "img" }],
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebPackPlugin({
+      inject: "body",
+      template: "./public/index.html",
+    }),
+  ],
   devServer: {
     contentBase: path.resolve(__dirname, "./dist"),
     hot: true,

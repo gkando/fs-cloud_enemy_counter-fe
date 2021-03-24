@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>fs-cloud_enemy_counter-fe</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #app {
+      padding-top: 150px;
+    }
+
+    .header {
+      position: fixed;
+      left: 0;
+      top: 10px;
+      width: 100%;
+      z-index: 100;
+      text-align: right;
+      opacity: 1;
+      visibility: visible;
+      background-color: #000;
+    }
+
+    .header-container {
+      padding: 30px 0;
+      margin: 0 65px;
+      position: relative;
+      flex: 1;
+      align-items: flex-start;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      /* flex-direction: row; */
+    }
+
+    .header .head-top .menu-btn {
+      position: relative;
+      margin: 0 auto;
+      width: 26px;
+      height: 20px;
+    }
+
+
+    .header.menu-btn:before,
+    .header .menu-btn:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #141414;
+      transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -webkit-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+    }
+
+    .header.menu-btn:after {
+      top: auto;
+      bottom: 0;
+    }
+
+    .header .brand {
+      padding-top: 0;
+      max-width: 240px;
+      float: left;
+      font-size: 0;
+    }
+
+    .brand a {
+      font-size: 2rem;
+      line-height: 42px;
+      font-family: 'Roboto';
+      font-weight: 600;
+      display: block;
+      color: #363636;
+    }
+
+    .top-menu {
+      display: inline;
+    }
+
+    .menu {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+      width: 33vw;
+    }
+
+    .menu-item {
+      display: block;
+      line-height: 42px;
+      margin: 0 10px 2px 10px;
+      text-align: center;
+    }
+
+    a {
+      color: #fcfcfc;
+      text-decoration: none;
+      opacity: 1;
+      outline: none;
+    }
+  </style>
+</head>
+
+
+<body>
+  <header class="header">
+    <div class="header-container">
+      <div class="brand">
+        <a href="#home"><img src="img/codehammer-brand-logo-sm.png" /></a>
+      </div>
+      <nav class="menu" id="navbar">
+        <a class="menu-item navbar-item active" id="nav-home" href="#home">
+          Home
+        </a>
+        <a class="menu-item navbar-item" href="#about">
+          About
+        </a>
+        <a class="menu-item navbar-item" href="#tech">
+          Tech Stack
+        </a>
+      </nav>
+    </div>
+  </header>
+  <div id="app">
+
+  </div>
+  <script src="./bundle.js"></script>
+</body>
+
+</html>
