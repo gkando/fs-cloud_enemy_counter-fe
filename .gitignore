@@ -82,11 +82,12 @@ typings/
 .nuxt
 dist
 
-# Gatsby files
 .cache/
-# Comment in the public line in if your project uses Gatsby and *not* Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
+coverage/
+dist/*
+!dist/index.html
+node_modules/
+*.log
 
 # vuepress build output
 .vuepress/dist
@@ -102,3 +103,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
