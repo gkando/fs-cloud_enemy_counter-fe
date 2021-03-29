@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+#app {
+  padding-top: 150px;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: right;
+  opacity: 1;
+  visibility: visible;
+  background-color: #000;
+}
+
+.header-container {
+  padding: 30px 0;
+  margin: 0 65px;
+  position: relative;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* flex-direction: row; */
+}
+
+.header .head-top .menu-btn {
+  position: relative;
+  margin: 0 auto;
+  width: 26px;
+  height: 20px;
+}
+
+.header.menu-btn:before,
+.header .menu-btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #141414;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+}
+
+.header.menu-btn:after {
+  top: auto;
+  bottom: 0;
+}
+
+.header .brand {
+  padding-top: 0;
+  max-width: 240px;
+  float: left;
+  font-size: 0;
+}
+
+.brand a {
+  font-size: 2rem;
+  line-height: 42px;
+  font-family: "Roboto";
+  font-weight: 600;
+  display: block;
+  color: #363636;
+}
+
+.top-menu {
+  display: inline;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 33vw;
+}
+
+.menu-item {
+  display: block;
+  line-height: 42px;
+  margin: 0 10px 2px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+a {
+  color: #fcfcfc;
+  text-decoration: none;
+  opacity: 1;
+  outline: none;
+}
+
+.App {
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+section {
+  min-height: 100vh;
+  padding-top: 150px;
+}
+.logo {
+  width: 650px;
+  display: block;
+  margin: 0 auto;
+}
+.countContainer {
+  margin-top: 40px;
+}
+.counter {
+  font-size: calc(40px + 2vmin);
+}
+
+.drawer-list {
+  width: 250px;
+  width: "auto";
+}
+
+.oldscreeneffect {
+  background: #000;
+  background-size: 100% 4px;
+  background-repeat: repeat-y;
+  opacity: 0.9;
+}
+
+.pccase {
+  font-family: "VT323", monospace;
+  background: #b6b6b6;
+  top: -120px;
+  bottom: 0;
+  width: 650px;
+  height: 600px;
+  margin: auto;
+  border: 5px solid #3d3b3b;
+  box-shadow: 0px 0px 0px 10px #b6b6b6;
+  border-radius: 5px;
+}
+.pccase .pccaselower,
+.cpu .pccaselower {
+  height: 80px;
+  margin: 10px 0px 10px 0px;
+  padding: 15px 20px 20px 10px;
+  border-top: 5px solid #3d3b3b;
+  font-size: 50pt;
+  font-weight: bold;
+}
+.pccase .pccaselower .pccaseonoffbutton,
+.cpu .pccaselower .pccaseonoffbutton {
+  float: right;
+  width: 50px;
+  height: 50px;
+  margin: 5px 35px 0px 0px;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+.pccase .pccaselower .innercirclecase,
+.cpu .pccaselower .innercirclecase {
+  background-color: gray;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  margin-top: 7px;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+.pccase .pccaselower .innerlinecase,
+.cpu .pccaselower .innerlinecase {
+  background-color: black;
+  width: 3px;
+  height: 40px;
+  margin: auto;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+
+.screen {
+  height: 450px;
+  margin: 35px 35px 0px 35px;
+  border: 3px solid #222121;
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 10px 10px #000;
+}
+.screen .screentext {
+  color: #00fe1a;
+  margin: 20px 30px;
+  opacity: 0.6;
+}
+
+.server-btns {
+  margin-bottom: 15px;
+}
+.server-btns:hover {
+  background-color: #00fe1a;
+  color: #000;
+}
+
+.retroLogo {
+  font-size: 10px;
+}
+.tasksText {
+  display: flex;
+  flex-direction: column;
+}

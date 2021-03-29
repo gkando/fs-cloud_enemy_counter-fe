@@ -61,7 +61,7 @@ yarn test
 
 ---
 
-Increase community engagement by implementing a cloud based web service and complementary website where players track all accumulated in game kills from every platform.
+Increase community engagement by implementing a cloud based web service and complementary website where players track all accumulated in game kills from every platform. Leaderboards encourage competition among players of your game, and create incentives for the players to get better at the game. Adopting leaderboards allows players to keep up with each other and facilitates building a community. It can also result in players spending more time with the game and higher retention.
 
 ---
 
@@ -121,4 +121,7 @@ He will seek to manipulate the total kill count to show large increases over a s
 
 ### Data Structure
 
-{}
+Data from player game (client side) => Lambda Functon => DB
+{
+
+}
