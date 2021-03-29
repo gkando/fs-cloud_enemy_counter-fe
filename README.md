@@ -32,13 +32,7 @@ yarn start
 To create a production build:
 
 ```sh
-yarn run build
-```
-
-To create a development build:
-
-```sh
-yarn run build-dev
+yarn build
 ```
 
 ## Running
