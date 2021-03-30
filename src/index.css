@@ -113,6 +113,9 @@ a {
   color: #fff;
   text-align: center;
 }
+#about {
+  text-align: unset;
+}
 section {
   min-height: 100vh;
   padding-top: 150px;

@@ -1,0 +1,120 @@
+---
+openapi: 3.0.1
+info:
+  title: Cloud Enemy Kill Counter
+  description: |+
+    Cloud based web service for tracking all accumulated in game player kills transmitted from a mock game server.
+
+    The complementary website where players track the community's total kill count is here:
+
+  version: "0.1"
+servers:
+- url: https://vmuxypsric.execute-api.eu-north-1.amazonaws.com/dev
+paths:
+  /dev/totals:
+    get:
+      description: Retrieves the total number of player kills.
+      responses:
+        "200":
+          description: Returns an object containing the totalKills.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+              examples:
+                "0":
+                  value: |-
+                    {
+                      "totalKills": "4495"
+                    }
+      servers:
+      - url: https://vmuxypsric.execute-api.eu-north-1.amazonaws.com/dev
+    servers:
+    - url: https://vmuxypsric.execute-api.eu-north-1.amazonaws.com/dev
+  /dev/kills:
+    post:
+      description: Add a new batch of player kills to the total enemy kill counter. API key is required for access.  Body must contain an array of objects, each containing a playerId and number of kills.
+      parameters:
+      - name: x-api-key
+        in: header
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: cDuLFo3HLE2DnCkRPfiXO3rAHLOgx4ou8m2fEfvO
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            examples:
+              "0":
+                value: |-
+                  [
+                    {
+                      "playerId": "nL5pSEK3D8p0q_hLSBvUO",
+                      "kills": 184
+                    },
+                    {
+                      "playerId": "l_Ofz7N63LLRK5YcKvS4T",
+                      "kills": 94
+                    }]
+      responses:
+        "200":
+          description: OK - Batch succesfully added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+              examples:
+                "0":
+                  value: |-
+                    {
+                      "response": {
+                        "success": true
+                      }
+                    }
+        "403":
+          description: Forbidden - Authentication credentials not provided
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_403'
+              examples:
+                "0":
+                  value: '{"message":"Forbidden"}'
+      security:
+      - ApiKeyAuth: []
+      servers:
+      - url: https://vmuxypsric.execute-api.eu-north-1.amazonaws.com/dev
+    servers:
+    - url: https://vmuxypsric.execute-api.eu-north-1.amazonaws.com/dev
+components:
+  schemas:
+    inline_response_200_1:
+      type: object
+      properties:
+        response:
+          $ref: '#/components/schemas/inline_response_200_1_response'
+    inline_response_200:
+      type: object
+      properties:
+        totalKills:
+          type: string
+    inline_response_403:
+      type: object
+      properties:
+        message:
+          type: string
+    inline_response_200_1_response:
+      type: object
+      properties:
+        success:
+          type: boolean
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      name: X-API-KEY
+      in: header

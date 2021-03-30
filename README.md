@@ -1,16 +1,22 @@
-# fs-cloud_enemy_counter-fe
+# Cloud Enemy Kill Counter - Frontend
 
-Front-End repo for Cloud Enemy Counter project.
+Cloud based web service for tracking all accumulated in game player kills transmitted from a mock game server.
+
+The complementary website where players track the community's total kill count can be found below.
+
+![alt text](fs-cloud_enemy_counter-diagram.png "Title")
 
 [Vision - Problem & Objectives](#vision)
 
 [Architecture & Tech Stack](#tech)
 
+[API Standards](#api)
+
 [Github Project Board](https://github.com/users/gkando/projects/1)
 
-[Deployed Frontend](https://master.d1p108p2yx9tvh.amplifyapp.com/)
+[**Backend Repo**](https://github.com/gkando/fs-cloud_enemy_counter-be)
 
-[Deployed Backend](#)
+[**Deployed Frontend**](https://master.d1p108p2yx9tvh.amplifyapp.com/)
 
 ## Building, Running & Testing
 
@@ -80,42 +86,65 @@ Increase community engagement by implementing a cloud based web service and comp
 
 ---
 
-### User Types
-
----
-
-#### Friendly Player
-
-Jörgen is an experienced gamer but new to the CodeHammer community. He wants to enjoy healthy competition and cooperation in a community to gain personal and collective achievements.
-
-#### Not So Friendly Player
-
-Joe, while an avid gamer and member of our games community, pushes the lines of fair play and good sportsmanship. For him, gaming is less about legitimate in game achievements, and more about secretly subverting the games rules to gain an unfair advantage over an opponent 'for the lulz.'
-
-He will seek to manipulate the total kill count to show large increases over a short period of time to bolster his gaming 'cred' and disparage the game's quality and community engagement strategy.
-
----
-
 ## <a name="tech"></a> Architecture & Tech Stack
 
 ### Back-End
 
-- **API:** TBD
-- **Business Logic:** Lambda function written in TypeScript.
+- **API:** AWS API Gateway
+- **Business Logic:** Lambda function written in JS.
 - **Database:** DynamoDB.
-- **Testing:** TBD.
+- **Testing:** Jest for unit testing.
 
 ### Front-End
 
-- **UI:** React framework using Axios for API calls & CSS for basic styling.
+- **UI:** React framework written in TypeScript using Axios for API calls & CSS for basic styling.
 - **Hosting:** AWS Amplify Console to provide a git-based workflow for CD.
-- **Testing:** Jest for unit testing.
 
 ---
 
-### Data Structure
+## <a name="api"></a> API Standards
 
-Data from player game (client side) => Lambda Functon => DB
-{
+Standards for interacting with this web service.
 
-}
+## Version: 0.1
+
+### /dev/totals
+
+#### GET
+
+##### Description:
+
+Retrieves the total number of player kills.
+
+##### Responses
+
+| Code | Description                                  |
+| ---- | -------------------------------------------- |
+| 200  | Returns an object containing the totalKills. |
+
+### /dev/kills
+
+#### POST
+
+##### Description:
+
+Add a new batch of player kills to the total enemy kill counter. API key is required for access. Body must contain an array of objects, each containing a playerId and number of kills.
+
+##### Parameters
+
+| Name      | Located in | Description | Required | Schema |
+| --------- | ---------- | ----------- | -------- | ------ |
+| x-api-key | header     |             | No       | string |
+
+##### Responses
+
+| Code | Description                                         |
+| ---- | --------------------------------------------------- |
+| 200  | OK - Batch succesfully added                        |
+| 403  | Forbidden - Authentication credentials not provided |
+
+##### Security
+
+| Security Schema | Scopes |
+| --------------- | ------ |
+| ApiKeyAuth      |        |
