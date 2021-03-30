@@ -15,7 +15,7 @@ const GameServer: React.FC<PropsInterface> = (props) => {
       setMsg("Must get player data first!");
     } else {
       const options = {
-        headers: { "x-api-key": process.env.API_KEY },
+        headers: { "x-api-key": process.env.REACT_APP_API_KEY },
       };
 
       axios
