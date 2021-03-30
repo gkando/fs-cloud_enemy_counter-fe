@@ -3,8 +3,6 @@ import axios from "axios";
 import NavBar from "./components/NavBar";
 import BottomDrawer from "./components/BottomDrawer";
 import logo from "./img/codehammer-logo-sm.png";
-import SwaggerUI from "swagger-ui-react";
-import "./theme-monokai.css";
 
 const Spec = {
   openapi: "3.0.1",
@@ -218,7 +216,6 @@ function App() {
       </section>
       <section id="about">
         <h2>About this project</h2>
-        <SwaggerUI spec={Spec} />
       </section>
       <section id="tech">
         <h2>Tech stack used</h2>
