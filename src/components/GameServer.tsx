@@ -1,25 +1,29 @@
 import React, { useState } from "react";
+import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import generateData from "../utils/generateData";
 
 interface PropsInterface {
   getKills: () => void;
 }
+type Message = JSX.Element | string;
 
 const GameServer: React.FC<PropsInterface> = (props) => {
   const [data, setData] = useState("");
-  const [msg, setMsg] = useState("");
+  const [msg, setMsg] = useState<Message>();
+  const [showInput, setShowInput] = useState(false);
+  const [value, setValue] = useState("");
 
   function postKills() {
     if (data === "") {
       setMsg("Must get player data first!");
     } else {
       const options = {
-        headers: { "x-api-key": process.env.REACT_APP_API_KEY },
+        headers: { "x-api-key": value },
       };
 
       axios
-        .post("https://2g8gm210z6.execute-api.eu-north-1.amazonaws.com/dev/kills", data, options)
+        .post("https://vmuxypsric.execute-api.eu-north-1.amazonaws.com/dev/kills", data, options)
         .then((response) => {
           console.log("RESPONSE: ", response.data, new Date().toISOString());
           setTimeout(function () {
@@ -34,6 +38,18 @@ const GameServer: React.FC<PropsInterface> = (props) => {
     setMsg("New Player Kills Data:");
     setData(gameData);
   };
+
+  const handleSubmit = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      console.log("do validate");
+      postKills();
+    }
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
   return (
     <div className="pccase">
       <div className="screen oldscreeneffect">
@@ -54,7 +70,7 @@ const GameServer: React.FC<PropsInterface> = (props) => {
             <div className="server-btns" onClick={getData}>
               (1) Get Player Kills Data
             </div>
-            <div className="server-btns" onClick={postKills}>
+            <div className="server-btns" onClick={() => setShowInput(true)}>
               (2) Transmit Player Kills to Cloud Enemy Counter
             </div>
             <div className="server-msg">
@@ -62,6 +78,21 @@ const GameServer: React.FC<PropsInterface> = (props) => {
               <br></br>
               {data}
             </div>
+            {showInput ? (
+              <div id="prompt">
+                {" "}
+                <p>api.key:</p>
+                <input
+                  type="text"
+                  value={value}
+                  onChange={handleChange}
+                  onKeyDown={handleSubmit}
+                  className="terminal-input"
+                />
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

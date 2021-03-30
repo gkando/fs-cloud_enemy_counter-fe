@@ -61,7 +61,7 @@ const About = () => {
         <li>
           <label className="b-contain">
             <span>Source Control - create repos for FE &amp; BE code.</span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -71,7 +71,7 @@ const About = () => {
         <li>
           <label className="b-contain">
             <span>Create a basic page as a framework to hold enemy slaying counter.</span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -81,7 +81,7 @@ const About = () => {
         <li>
           <label className="b-contain">
             <span>Minimally style page with CSS.</span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -91,7 +91,7 @@ const About = () => {
         <li>
           <label className="b-contain">
             <span>Serve app in the cloud</span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -104,7 +104,7 @@ const About = () => {
               Configure Amazon CloudFront (or GCP HTTPS load balancer, or Azure CDN etc) to serve
               site using HTTPS.
             </span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -116,7 +116,7 @@ const About = () => {
             <span>
               Use TypeScript to create logic to retrieve enemy kill count from web service
             </span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -126,7 +126,7 @@ const About = () => {
         <li>
           <label className="b-contain">
             <span>Store kill count in NoSQL database</span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -136,7 +136,7 @@ const About = () => {
         <li>
           <label className="b-contain">
             <span>Create an API that accepts HTTP requests and communicates with database</span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -153,7 +153,7 @@ const About = () => {
               </li>
               <li>Some way of being called to report the amount of kills for your app</li>
             </ul>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -163,7 +163,7 @@ const About = () => {
         <li>
           <label className="b-contain">
             <span>Unit test serverless function and website code</span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -175,7 +175,7 @@ const About = () => {
             <span>
               Infrastructure as Code. <em>Stretch Goal</em>
             </span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
@@ -191,7 +191,7 @@ const About = () => {
               CI/CD - Set up GitHub Actions to automatically test and deploy backend.
               <em>Stretch Goal</em>
             </span>
-            <input type="checkbox" checked />
+            <input readOnly type="checkbox" checked />
             <div className="b-input"></div>
           </label>
           <blockquote>
