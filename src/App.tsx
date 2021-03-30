@@ -188,7 +188,7 @@ function App() {
   // api call to get-kills endpoint
   function getKills() {
     axios
-      .get<KillCount>("https://2g8gm210z6.execute-api.eu-north-1.amazonaws.com/dev/totals")
+      .get<KillCount>("https://vmuxypsric.execute-api.eu-north-1.amazonaws.com/dev/totals")
       .then((response) => {
         console.log("RESPONSE: ", response.data, new Date().toISOString());
         setKillCount(response.data.totalKills);
