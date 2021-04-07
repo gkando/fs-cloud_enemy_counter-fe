@@ -41,10 +41,10 @@ function App() {
   // launch get request on initial page load & after random delay
   useEffect(() => {
     getKills();
-    const interval = setInterval(() => {
-      getKills();
-    }, delay());
-    return () => clearInterval(interval);
+    // const interval = setInterval(() => {
+    //   getKills();
+    // }, delay());
+    // return () => clearInterval(interval);
   }, []);
 
   return (

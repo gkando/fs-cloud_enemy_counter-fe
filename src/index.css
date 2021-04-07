@@ -213,17 +213,54 @@ section {
 }
 .screentext p {
   margin-bottom: 0px;
+  font-size: 15px;
+}
+
+.screen-line {
+  margin-bottom: 4px;
 }
 
 .server-btns {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .server-btns:hover {
   background-color: #00fe1a;
   color: #000;
 }
 
-.retroLogo {
+#json {
+  background: inherit;
+  font-size: 15px;
+  font-family: "VT323", monospace;
+  padding: 0;
+  height: 125px;
+  overflow-x: unset;
+}
+.server-msg {
+  margin-right: -30px;
+  padding: 0;
+  margin-left: 28px;
+  overflow: auto;
+  height: 159px;
+  display: flex;
+  flex-direction: column;
+}
+.server-msg::-webkit-scrollbar {
+  width: 6px;
+}
+.server-msg::-webkit-scrollbar-track {
+  background: #000;
+}
+.server-msg::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 60px;
+}
+.msg-line {
+  margin: 0;
+}
+
+#retroLogo {
   font-size: 10px;
   margin-bottom: 0px;
 }
@@ -233,7 +270,7 @@ section {
 }
 .tasksText p {
   font-size: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 7px;
 }
 
 #prompt {
