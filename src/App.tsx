@@ -27,7 +27,7 @@ function App() {
   };
 
   // Delay set longer for debugging
-  const delay = () => Math.random() * 400000;
+  const delay = () => Math.random() * 300000;
 
   // api call to get-kills endpoint
   function getKills() {
@@ -41,10 +41,10 @@ function App() {
   // launch get request on initial page load & after random delay
   useEffect(() => {
     getKills();
-    // const interval = setInterval(() => {
-    //   getKills();
-    // }, delay());
-    // return () => clearInterval(interval);
+    const interval = setInterval(() => {
+      getKills();
+    }, delay());
+    return () => clearInterval(interval);
   }, []);
 
   return (
